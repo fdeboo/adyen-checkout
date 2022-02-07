@@ -18,6 +18,7 @@
   "homepage": "https://github.com/fdeboo/adyen-checkout#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.2"
   }
 }
