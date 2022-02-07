@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    flex-shrink: 1;
+}
+
+/* FOOTER */
+footer {
+    div {
+        background-color: cadetblue;
+    }
+}
