@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_integration",
+  "version": "1.0.0",
+  "description": "Testing the Adyen checkout integrations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fdeboo/adyen-checkout.git"
+  },
+  "author": "Fran DeBoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fdeboo/adyen-checkout/issues"
+  },
+  "homepage": "https://github.com/fdeboo/adyen-checkout#readme"
+}
