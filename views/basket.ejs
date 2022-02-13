@@ -1,0 +1,31 @@
+<%- extend('base') %>
+    <section class="title">
+        <h2>Confirm basket</h2>
+    </section>
+    <section class="main-section">
+        <div class="bag-contents" id="">
+            <% basketItems.map(function(item) { %>
+                <div class="line-item p-1">
+                    <img src=<%=item.img %> class="product-image" />
+                    <div class="product-overview">
+                        <h3 class="m-none">
+                            <%= item.name %>
+                        </h3>
+                        <% if (item.size) { %>
+                            <p>
+                                <%= item.size %>
+                            </p>
+                            <% } %>
+                                <p>
+                                    <%= item.price %>
+                                </p>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+        <div class="cta=btns" id="">
+            <a class="d-block btn w-100 py-1 btn--secondary" href="#">Continue Shopping</a>
+            <a class="d-block w-100 btn py-1" href="/checkout">Proceed To Checkout</a>
+        </div>
+    </section>
+    <section class="side-section"></section>

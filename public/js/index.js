@@ -1,12 +1,15 @@
+// import "@adyen/adyen-web";
+
 const navTogglerBtn = document.querySelector(".collapsible");
-const checkoutBtn = document.querySelector(".checkout-btn");
+const clientKey = document.getElementById("clientKey");
 
 if (navTogglerBtn) {
   navTogglerBtn.addEventListener("click", classToggle);
 }
 
-if (checkoutBtn) {
-  checkoutBtn.addEventListener("click", getCheckout);
+if (clientKey) {
+  clientKey.innerHTML.trim();
+  getCheckout();
 }
 
 function classToggle() {
@@ -16,7 +19,59 @@ function classToggle() {
 }
 
 async function getCheckout() {
-  response = await fetch("/api/session", {
-    method: "POST",
-  });
+  try {
+    const checkoutSessionResponse = await fetch("/api/sessions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (!checkoutSessionResponse.ok) {
+      throw new Error("Something went wrong with fetching the session");
+    }
+
+    const checkoutSession = await checkoutSessionResponse.json();
+
+    const configuration = {
+      session: checkoutSession,
+      clientKey,
+      environment: "test",
+      onPaymentCompleted: (result, component) => {
+        console.info(result, component);
+      },
+      onError: (err, component) => {
+        console.error(err.name, err.message, err.stack, component);
+      },
+      paymentMethodsConfiguration: {
+        card: {
+          ideal: {
+            showImage: true,
+          },
+          card: {
+            hasHolderName: true,
+            holderNameRequired: true,
+            name: "Credit or debit card",
+            amount: {
+              value: 1000,
+              currency: "GBP",
+            },
+          },
+          paypal: {
+            amount: {
+              currency: "GBP",
+              value: 1000,
+            },
+            environment: "test",
+            countryCode: "GB", // Only needed for test. This will be automatically retrieved when you are in production.
+          },
+        },
+      },
+    };
+
+    const checkout = await AdyenCheckout(configuration);
+    const dropinContainer = document.getElementById("dropin-container");
+
+    checkout.create("dropin").mount(dropinContainer);
+  } catch (err) {
+    console.log(err);
+  }
 }
