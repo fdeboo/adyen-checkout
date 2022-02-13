@@ -1,14 +1,14 @@
-// import "@adyen/adyen-web";
+import AdyenCheckout from "@adyen/adyen-web";
 
 const navTogglerBtn = document.querySelector(".collapsible");
-const clientKey = document.getElementById("clientKey");
+let clientKey = document.getElementById("clientKey");
 
 if (navTogglerBtn) {
   navTogglerBtn.addEventListener("click", classToggle);
 }
 
 if (clientKey) {
-  clientKey.innerHTML.trim();
+  clientKey = clientKey.innerHTML.trim();
   getCheckout();
 }
 

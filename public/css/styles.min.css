@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url(/Users/frandeboo/Documents/Web_Development/adyen_integration/nodejs_integration/node_modules/@adyen/adyen-web/dist/adyen.css);
 /* MARGIN */
 .m-none {
   margin: 0;
@@ -87,6 +88,26 @@
 
 .p-3 {
   padding: 3rem;
+}
+
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1rem;
+}
+
+h4 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.8rem;
 }
 
 /* BREAKPOINTS */
@@ -309,6 +330,7 @@ section.main-section {
 }
 
 section.side-section {
+  border: 0.4px solid #eee;
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;

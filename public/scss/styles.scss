@@ -1,7 +1,9 @@
 // @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
 // @import url(https://fonts.googleapis.com/css2?familyEconomica:wght@400;700&display=swap);
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import './_whitespace';
+@import '..//../node_modules/@adyen/adyen-web/dist/adyen.css';
+@import './_boxmodel';
+@import './_headings';
 
 /* BREAKPOINTS */
 $layout-breakpoint-small: 700px;
@@ -181,6 +183,7 @@ section {
     }
     &.side-section {
         // background-color: #eee;
+        border: 0.4px solid #eee;
         grid-area: 3/1/4/3;
         @media (min-width: $layout-breakpoint-small) {
             grid-area: 2/2/3/3;
