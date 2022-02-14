@@ -1,8 +1,9 @@
 const express = require("express");
-const viewsController = require("../controllers/checkoutController");
+const checkoutController = require("../controllers/checkoutController");
 
 const router = express.Router();
 
-router.post("/sessions", viewsController.getSession);
+router.post("/sessions", checkoutController.getSession);
+router.all("/handleShopperRedirect", checkoutController.getRedirect);
 
 module.exports = router;

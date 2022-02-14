@@ -37,3 +37,9 @@ exports.getCheckout = async (req, res) => {
     clientKey,
   });
 };
+
+exports.getResult = async (req, res) => {
+  res.status(200).render("result", {
+    type: req.params.type,
+  });
+};

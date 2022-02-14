@@ -1,7 +1,6 @@
 // @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
-// @import url(https://fonts.googleapis.com/css2?familyEconomica:wght@400;700&display=swap);
+// @import '..//../node_modules/@adyen/adyen-web/dist/adyen.css';
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import '..//../node_modules/@adyen/adyen-web/dist/adyen.css';
 @import './_boxmodel';
 @import './_headings';
 
@@ -11,6 +10,7 @@ $layout-breakpoint-large: 1050px;
 
 /* COLOURS */
 $brand-color-primary: #fff;
+$brand-color-secondary: green;
 
 /* FONTS */
 $brand-type: 'Pacifico', cursive;
@@ -86,7 +86,7 @@ main {
     text-align: center;
     font-size: 1rem;
     &:hover {
-        background-color: #555;
+        background-color: $brand-color-secondary;
     }
 }
 
@@ -177,6 +177,14 @@ section {
     &.main-section {
         // background-color: #eee;
         grid-area: 2/1/3/3;
+        .status {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                max-width: 15rem;
+            }
+        }
         @media (min-width: $layout-breakpoint-small) {
             grid-area: 2/1/3/2;
           }       

@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import AdyenCheckout from "@adyen/adyen-web";
 
 const navTogglerBtn = document.querySelector(".collapsible");
